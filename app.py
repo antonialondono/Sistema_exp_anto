@@ -27,15 +27,11 @@ with col2:
     st.image (image, caption='tu receta a un clic',width=300)
 
 with st.sidebar:
-    st.subheader("Que es un sistema Experto?")
+    st.subheader("¿Para que se utiliza Remmy?")
     st.write(
-    """Este sistema experto te resolverá dudas sobre la conformadora de talones.
-       te ayudará a aprender lo básico sobre la máquina.
-       
-    """
-                )            
+    """Remmy es una aplicación que te ayuda a prepara recetas, pon en el buscador lo que quieras cpocinas hoy.""")            
 
-st.title('Sistema Experto CONFORMADORA DE TALONES💬')
+st.write('¿Que quires preparar el día de hoy?')
 
 #with open('Experts.json') as source:
 #     animation=json.load(source)
@@ -74,7 +70,7 @@ embeddings = OpenAIEmbeddings()
 knowledge_base = FAISS.from_texts(chunks, embeddings)
 
 # show user input
-st.subheader("Usa el campo de texto para hacer tu pregunta")
+st.write("Buscar recetas: ")
 user_question = st.text_area(" ")
 if user_question:
         docs = knowledge_base.similarity_search(user_question)
