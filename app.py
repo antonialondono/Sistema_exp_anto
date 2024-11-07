@@ -21,7 +21,11 @@ try:
     os.mkdir("temp")
 except:
     pass
-
+image = Image.open('Remmy.png')
+col1, col2, col3 = st.columns([1,2,3])
+with col2:
+    st.image (image, caption='tu receta a un clic',width=300)
+st.image(image)
 with st.sidebar:
     st.subheader("Que es un sistema Experto?")
     st.write(
@@ -32,8 +36,7 @@ with st.sidebar:
                 )            
 
 st.title('Sistema Experto CONFORMADORA DE TALONES💬')
-image = Image.open('Instructor.png')
-st.image(image)
+
 #with open('Experts.json') as source:
 #     animation=json.load(source)
 #st.lottie(animation,width =350)
